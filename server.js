@@ -4,6 +4,7 @@
 import connectDB from './config/mongodb.js'
 import connectCloudinary from './config/cloudinary.js'
 import userRouter from './routes/userRouter.js'
+import productRouter from './routes/productRoute.js'
 
 
 //  app config
@@ -17,8 +18,7 @@ app.use(express.json())
 app.use(cors())
 
 // api end points
-app.use("/api/user",userRouter)
-app.get('/',(req,res)=>{
-    res.send("API Working")
-})
+app.use("/api/user/",userRouter)
+app.use("/api/product",productRouter)
+app.get('/',(req,res)=>{ res.send("API Working")})
 app.listen(port,()=>console.log("Server started on ", +port))
