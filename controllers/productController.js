@@ -34,9 +34,10 @@ const productData ={
 
 }
 console.log(productData)//////////////////////////////////////////////// start from here 6:54:51
-const product = new productModels
+const product = new productModels(productData)
+await product.save()
 
-res.json({})
+res.json({success:true,message:"Product Added"})
 
 
  }catch(error){
